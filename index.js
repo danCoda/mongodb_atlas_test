@@ -14,10 +14,11 @@ const connectToDatabase = () => {
         useUnifiedTopology: true
     })
         .then(async () => {
-            console.log(`Connected to Database!`);
+            console.log(`Connected to Database! Environment variable: ${process.env.TEST}`);
             const newUser = new User({
                 name: "Tomooo",
-                age: 28
+                age: 28,
+                test: process.env.TEST
             });
             await newUser.save();
             const myDoc = await User.findOne({ name: "Tomooo" });
