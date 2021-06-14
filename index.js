@@ -16,6 +16,11 @@ app.listen(PORT_NUMBER, () => {
     console.log(`Backend running on port ${process.env.PORT}!`);
 });
 
+app.get('/', (req, res) => {
+    console.log("Home page...");
+    res.send("Hello, from home...");
+});
+
 const connectToDatabase = () => {
     mongoose.connect(uri, {
         useNewUrlParser: true, 
