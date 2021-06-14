@@ -29,7 +29,7 @@ const connectToDatabase = () => {
         })
         .catch(e => {
             console.log("Connection FAILED to Database: ", e);
-        });
+        }); 
 };
 
 connectToDatabase();
