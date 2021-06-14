@@ -3,9 +3,12 @@ const mongoose = require('mongoose');
 
 const User = require('./models/user');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 // Replace the following with your Atlas connection string                                                                                                                                        
 const dbName = "myFirstDatabase";
-const uri = `mongodb+srv://dbUserTest:63-KWBJ9@QFGRf8@cluster0.fazwb.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_AUTH_DETAILS}@cluster0.fazwb.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 
 const connectToDatabase = () => {
@@ -16,7 +19,7 @@ const connectToDatabase = () => {
         .then(async () => {
             console.log(`Connected to Database! Environment variable: ${process.env.TEST}`);
             const newUser = new User({
-                name: "Tomooo",
+                name: "Tomooghujiuhygto",
                 age: 28,
                 test: process.env.TEST
             });
