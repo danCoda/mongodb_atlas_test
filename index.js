@@ -13,7 +13,7 @@ const PORT_NUMBER = process.env.PORT || 9000;
 const app = express();
 
 app.listen(PORT_NUMBER, () => {
-    console.log(`Backend running on port ${PORT}!`);
+    console.log(`Backend running on port ${process.env.PORT}!`);
 });
 
 const connectToDatabase = () => {
